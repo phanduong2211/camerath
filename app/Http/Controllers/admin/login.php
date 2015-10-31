@@ -63,12 +63,25 @@
 		}
 		public function getIndexAdmin()
 		{
-			return View::make("admin.index");
+			return View::make("admin.dashboard");
 		}
 		public function logout()
 		{
 			Session::forget("nameuser");
 			return Redirect::to("admin/login");
+		}
+		public function products_list()
+		{
+			if($this->boolchecksessionlogin())
+			{
+				return View::make("admin.products.products-list");
+			}
+			return Redirect::to("admin/login");
+			
+		}
+		public function test()
+		{
+			return View::make("admin.products.products-list");
 		}
 	}
  ?>

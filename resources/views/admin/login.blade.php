@@ -61,7 +61,7 @@
 					if(Session::get("login")=="false")
 						echo "<div class='alert alert-danger fade in'>
     <a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-    <strong>UserName or Password wrong!</strong></div>";
+    <strong>Error: UserName or Password wrong!</strong></div>";
 						Session::forget("login");
 					?>
 					<form class="form-horizontal"  method="post">
