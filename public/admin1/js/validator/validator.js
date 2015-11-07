@@ -269,8 +269,13 @@ var validator = (function($){
 
 		if( !type || type == 'password' || type == 'tel' )
 			type = 'text';
-
-		return tests[type](value);
+		try{
+			return tests[type](value);
+		}
+		catch(err)
+		{
+			return true;
+		}
 	}
 
 	function prepareFieldData(el){

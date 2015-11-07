@@ -79,6 +79,29 @@
 			return Redirect::to("admin/login");
 			
 		}
+		public function add_product()
+		{
+			if($this->boolchecksessionlogin())
+			{
+				//$menudistinct=DB::table('menu')->orderBy('root','ASC')->groupBy('root')->get();
+				$menu=DB::table('menu')->get();
+				$arryTreeMenu=array();
+				foreach($menu as $values) {
+					
+						$data=DB::table('menu')->where("root","=",$values->ID)->get();
+
+						if($data==null)
+						{
+							array_push($arryTreeMenu,$values->ID);			
+						}
+						
+					}
+
+				return View::make("admin.products.add-product",array("menu"=>$menu,"arryTreeMenu"=>$arryTreeMenu));
+			}
+			return Redirect::to("admin/login");
+			
+		}
 		public function test()
 		{
 			return View::make("admin.products.products-list");

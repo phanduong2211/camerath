@@ -84,7 +84,7 @@
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="../admin/products-list">Products List</a>
                                         </li>
-                                        <li><a href="form_advanced.html">Add Product</a>
+                                        <li><a href="../admin/add-product">Add Product</a>
                                         </li>
                                         <li><a href="form_validation.html">Form Validation</a>
                                         </li>
@@ -320,6 +320,7 @@
                 <section>
                     @yield('admin.dashboard')
                     @yield('admin.products-list')
+                    @yield('admin.add-product')
             </section> 
 
                     
