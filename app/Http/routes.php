@@ -27,7 +27,7 @@ Route::get("/{infomation}","detailPages@getname");
 
 
 /////////////////-------------------------------------------admin pages--------------------------------------
-
+Route::controller("admin/menu","admin\menu");
 Route::get("admin/login","admin\login@getLogin");
 Route::get("admin/index","admin\login@checksessionlogin");
 Route::post("admin/login","admin\login@checklogin");
